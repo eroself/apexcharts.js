@@ -353,14 +353,16 @@ class RangeBar extends Bar {
     const opts = {
       w,
       seriesIndex,
-      dataPointIndex
+      dataPointIndex,
+      start,
+      end
     }
 
     if (typeof yLbTitleFormatter === 'function') {
       seriesName = yLbTitleFormatter(seriesName, opts)
     }
 
-    if (y1 && y2) {
+    if (Number.isFinite(y1) && Number.isFinite(y2)) {
       start = y1
       end = y2
 
